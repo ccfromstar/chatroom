@@ -36,5 +36,9 @@ io.on('connection',function(socket){
 	    //通过一个newImg事件分发到除自己外的每个用户
 	    socket.broadcast.emit('newImg', socket.nickname, imgData);
 	});
+	socket.on('audio', function(audioData) {
+	    //通过一个newImg事件分发到除自己外的每个用户
+	    socket.broadcast.emit('newAudio', socket.nickname, audioData);
+	});
 });
 
